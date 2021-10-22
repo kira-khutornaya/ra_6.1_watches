@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.App {
+  width: 500px;
+  padding: 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.Form__control {
+  margin: auto;
+  margin-bottom: 50px;
+}
+
+.Form {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.Form__group {
+  width: 210px;
+}
+
+.Form__field {
+  padding: 5px;
+  margin-top: 10px;
+  outline: none;
+}
+
+.button {
+  padding: 6px 15px;
+  border: 1px solid rgb(16, 43, 131);
+  background-color: #fff;
+  color: rgb(16, 43, 131);
+  outline: none;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(16, 43, 131);
+  color: #fff;
+}
+
+.Clock {
+  max-width: 108px;
+}
+
+.Clock__control {
+  margin-bottom: 3px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.Clock__control > .Clock__btn_remove {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  padding: 2px 4px 5px;
+  margin-left: 5px;
+  border-radius: 50%;
+  font-size: 10px;
+}
+
+.ClockContainer {
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: flex-end;
+}
+
+.Clock__face {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('/src/img/clock.png');
+  background-size: cover;
+  border: 8px solid #09192150;
+  background-color: #091921;
+  border-radius: 50%;
+  box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05),
+              inset 0 -15px 15px rgba(255, 255, 255, 0.05),
+              0 15px 15px rgba(0, 0, 0, 0.3),
+              inset 0 15px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Clock__face::before {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background-color: #fff;
+  border-radius: 50%;
+  z-index: 1000;
+}
+
+.Clock-face__hour,
+.Clock-face__minute,
+.Clock-face__second {
+  position: absolute;
+}
+
+.Clock-face__hour, .hr {
+  width: 50px;
+  height: 50px;
+}
+
+.Clock-face__minute, .mn {
+  width: 60px;
+  height: 60px;
+}
+
+.Clock-face__second, .sc {
+  width: 75px;
+  height: 75px;
+}
+
+.hr, .mn, .sc {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  border-radius: 50%;
+}
+
+.hr:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 25px;
+  background: #fff;
+  z-index: 10;
+}
+
+.mn:before {
+  content: '';
+  position: absolute;
+  width: 2px;
+  height: 30px;
+  background: #fff;
+  z-index: 11;
+}
+
+.sc:before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  height: 50px;
+  background: #ff105e;
+  z-index: 12;
+}
+
+
+.Clock:nth-child(n + 5) {
+  margin-top: 20px;
 }
